@@ -1,17 +1,17 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import ProductoAjeno from "./pages/ProductoAjeno";
+import "../src/assets/styles/index.css"
 import Login from "./pages/LogIn";
+import Registro from "./pages/Registro";
+import Main from "./pages/Main";
 
 
 function App() {
   return (
   <BrowserRouter>
   <Routes>
-    <Route path="/home" element={<Home/>}/>
     <Route path="/" element={<Login/>}/>
-    
-    <Route path="/producto-ajeno" element ={<ProductoAjeno/>}/>
+    <Route path="/registro" element={<Registro/>}/> 
+    <Route path="/main" element={<Main/>}/> 
   </Routes>
   </BrowserRouter>
   )

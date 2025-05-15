@@ -1,39 +1,68 @@
-// src/components/Registro.jsx
-
-import React from "react";
-import styles from "../assets/styles/login-registro.module.css";
+import styles from "../assets/styles/session.module.css";
 
 export default function Registro() {
   return (
-    <div className={styles.wrapper}>
-      <header>
-        <h1 className={styles.InicioSesion}>REGÍSTRATE</h1>
+    <div className={styles.loginWrapper}>
+      <header className={styles.loginHeader}>
+        <h1>REGÍSTRATE</h1>
       </header>
 
-      <main>
-        {/* Background “A” */}
-        
+      <main className={styles.loginMain}>
+        <div className={styles.loginLogoBackground} />
 
-        {/* Form container, same as login */}
-        <div className={styles.loginContent}>
-          <div className={styles.fotoAnahuac} />
-          <div className={styles.containerLogin}>
-            <h2>¡¡BIENVENID@!!</h2>
-            <form id="registerForm" action="/home">
-              <input type="text" placeholder="Nombre completo" required />
-              <input type="email" placeholder="Correo institucional" required />
-              <input type="tel" placeholder="Teléfono" required />
-              <input type="password" placeholder="Contraseña" required />
-              <div className={styles.buttons}>
-                <button type="submit">SIGUIENTE</button>
-              </div>
-            </form>
-          </div>
+        <div className={styles.loginContainer}>
+          <h2>¡¡BIENVENID@!!</h2>
+          <form id="registroForm" action="/home">
+            {/* Nombre */}
+            <input
+              type="text"
+              placeholder="Nombre completo"
+              required
+              className={styles.loginInputField}
+            />
+            {/* Teléfono */}
+            <input
+              type="tel"
+              placeholder="Teléfono"
+              required
+              className={styles.loginInputField}
+            />
+            {/* Correo */}
+            <input
+              type="email"
+              placeholder="user@anahuac.mx"
+              required
+              className={styles.loginInputField}
+            />
+            {/* Contraseña */}
+            <input
+              type="password"
+              placeholder="Contraseña"
+              required
+              className={styles.loginInputField}
+            />
+
+            <div className={styles.loginButtons}>
+              <a href="/">
+                <button
+                  type="button"
+                  id="LogInBtn"
+                  className={styles.loginActionButton}
+                >
+                  LOG IN
+                </button>
+              </a>
+
+              <button type="submit" className={styles.loginActionButton}>
+                SIGUIENTE
+              </button>
+            </div>
+          </form>
         </div>
       </main>
 
-      <footer>
-        <p className={styles.note}>
+      <footer className={styles.loginFooter}>
+        <p className={styles.loginNoteText}>
           Recuerda registrarte con tu correo institucional
         </p>
       </footer>

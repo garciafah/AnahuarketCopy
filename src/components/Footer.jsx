@@ -1,7 +1,7 @@
 // src/components/Footer.jsx
 
 import React, { useEffect } from "react";
-import "../assets/styles/global.css";
+import styles from "../assets/styles/global.module.css";
 
 export default function Footer() {
   useEffect(() => {
@@ -33,26 +33,29 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className= "footerFull">
-      <div className="footerContent">
-        {/* Anahuarket */}
-        
-        <div>
-          <h3>Anahuarket</h3>
-          <p>Todos los derechos reservados - Anahuarket</p>
+    <footer className={styles.appFooter}>
+      <div className={styles.appFooterContent}>
+        {/* Sección Anahuarket */}
+        <div className={styles.appFooterSection}>
+          <h3 className={styles.appFooterTitle}>Anahuarket</h3>
+          <p>Todos los derechos reservados – Anahuarket</p>
         </div>
 
-        {/* Contáctanos */}
-        <div>
-          <h3>
-            <a href="contacto.html">Contáctanos</a>
+        {/* Sección Contáctanos */}
+        <div className={styles.appFooterSection}>
+          <h3 className={styles.appFooterTitle}>
+            <a href="/contacto" className={styles.appFooterLink}>
+              Contáctanos
+            </a>
           </h3>
           <p>
-            <a href="contacto.html">Llama al 9988776644 para más información</a>
+            <a href="/contacto" className={styles.appFooterParagraphLink}>
+              Llama al 9988776644 para más información
+            </a>
           </p>
         </div>
 
-        {/* Aquí se carga tu chatbot */}
+        {/* Aquí el chatbot se inyecta automáticamente vía Landbot */}
       </div>
     </footer>
   );

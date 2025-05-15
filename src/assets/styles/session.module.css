@@ -1,4 +1,4 @@
-body {
+.loginWrapper {
   font-family: Arial, sans-serif;
   background-color: #ffffff;
   color: black;
@@ -6,30 +6,40 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-}
-
-a{
-  text-decoration: none;
-}
-
-.wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-.fotoAnahuac {
+.loginWrapper a {
+  text-decoration: none;
+}
+
+.loginHeader {
+  background-color: #F28901;    /* o tu color */
+  width: 100%;
+  color: rgb(255, 255, 255);
+  padding: 20px;
+  text-align: center;
+}
+
+.loginMain {
+  flex: 1 1 auto;
+  position: relative;
+  overflow: auto;  /* si necesitas scroll solo dentro del main */
+}
+
+.loginLogoBackground {
   position: fixed;
   width: 300px;
   height: 300px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
 }
-
-.fotoAnahuac::before {
+.loginLogoBackground::before {
   content: "";
   display: block;
   width: 100%;
@@ -39,7 +49,7 @@ a{
   opacity: 0.2;
 }
 
-.containerLogin {
+.loginContainer {
   position: relative;
   max-width: 400px;
   margin: 50px auto;
@@ -48,14 +58,7 @@ a{
   overflow: hidden;
 }
 
-header {
-  background-color: #F1F1F1;
-  color: orange;
-  padding: 20px;
-  text-align: center;
-}
-
-input {
+.loginInputField {
   display: block;
   width: 100%;
   padding: 10px;
@@ -65,46 +68,36 @@ input {
   background-color: transparent;
 }
 
-main {
-  flex: 1;
-}
-
-.buttons {
+.loginButtons {
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
 }
 
-.botonRegistroSiguiente {
-  justify-content: right;
-  display: flex;
-  margin-top: 30px;
-}
-
-button {
+.loginActionButton {
   width: 150px;
-  background-color: orange;
+  background-color: #F28901;
   color: white;
   padding: 10px 20px;
-  align-items: center;
   border: none;
   border-radius: 20px;
   cursor: pointer;
 }
-
-button:hover {
+.loginActionButton:hover {
   opacity: 0.8;
 }
 
-.note {
+.loginNoteText {
   margin-top: 20px;
-  color: orange;
+  color: rgb(255, 255, 255);
   font-size: 14px;
 }
 
-footer {
-  background-color: transparent;
-  color: #fff;
+.loginFooter {
+  margin-top: auto;
+  background-color: #F28901;    /* o el color que quieras */
+  width: 100%;
+  color: rgb(255, 255, 255);              /* texto dentro del footer */
   text-align: center;
   padding: 1rem;
 }
