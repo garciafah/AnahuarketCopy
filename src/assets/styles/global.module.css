@@ -1,6 +1,6 @@
-/* src/assets/styles/.module.css */
+/* src/assets/styles/global.module.css */
 
-/* ======= LAYOUT GLOBAL ======= */
+/* ======= APP LAYOUT ======= */
 .appWrapper {
   display: flex;
   flex-direction: column;
@@ -19,12 +19,14 @@
 }
 
 .appHeaderTopBar {
+  position: relative;        /* for centering the search */
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start; /* logo & icons at the edges */
   padding: 0.5rem 1rem;
 }
 
+/* left logo */
 .appHeaderLogoWrapper {
   flex: 0 0 auto;
 }
@@ -35,35 +37,38 @@
   color: #ffffff;
 }
 
+/* center search, absolute so it stays in middle */
 .appHeaderSearchContainer {
-  flex: 1 1 auto;
-  display: flex;
-  justify-content: center;
-  padding: 0 1rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .appHeaderSearchInput {
   width: 300px;
-  max-width: 100%;
+  max-width: 90vw;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   border: none;
   outline: none;
+  font-size: 1rem;
 }
 
+/* right icons */
 .appHeaderIconsRight {
-  flex: 0 0 auto;
+  margin-left: auto;
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
 .appHeaderIconLink {
-  margin-left: 1rem;
   display: flex;
   align-items: center;
+  color: inherit;
 }
 
-/* ======= NOTIFICACIONES ======= */
+/* ======= NOTIFICATION DROPDOWN ======= */
 .appHeaderNotificationIcon {
   position: relative;
   cursor: pointer;
@@ -111,37 +116,11 @@
   color: #333;
 }
 
-/* ======= CATEGORÍAS ======= */
-.appHeaderCategories {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f8f8f8;
-  padding: 0.5rem;
-  border-top: 1px solid #ccc;
-}
-
-.appHeaderCategory {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 1rem;
-  text-decoration: none;
-  color: #333;
-  font-size: 0.9rem;
-}
-
-.appHeaderCategoryIcon {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 0.25rem;
-}
-
 /* ======= FOOTER ======= */
 .appFooter {
   margin-top: auto;
   width: 100%;
-  background-color: #f8f8f8;
+  background-color: #f4f4f4;
   padding: 2rem 1rem;
   font-size: 0.95rem;
   border-top: 1px solid #ddd;
@@ -190,21 +169,13 @@
   margin-bottom: 0.5rem;
 }
 
-.appFooterLink {
-  text-decoration: none;
-  color: #333;
-}
-
-.appFooterLink:hover {
-  text-decoration: underline;
-  color: #f28901;
-}
-
+.appFooterLink,
 .appFooterParagraphLink {
   text-decoration: none;
   color: #333;
 }
 
+.appFooterLink:hover,
 .appFooterParagraphLink:hover {
   text-decoration: underline;
   color: #f28901;

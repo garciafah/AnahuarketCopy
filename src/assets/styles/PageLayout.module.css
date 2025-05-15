@@ -8,6 +8,8 @@
 }
 
 .mainContent {
+  display: flex;
+  flex-direction: column;
   flex: 1;                 /* empuja el footer abajo */
   width: 100%;             /* ocupa todo el ancho */
   text-align: left;        /* contenido pegado a la izquierda */
